@@ -1,0 +1,177 @@
+USE [BSSLSYS_ITF]
+GO
+/****** Object:  Table [dbo].[WorkFlowTab]    Script Date: 15/01/2020 5:26:34 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[WorkFlowTab](
+	[Keyid] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
+	[code] [varchar](30) NULL CONSTRAINT [DF_WorkFlowTab_code]  DEFAULT (''),
+	[descr] [varchar](150) NULL CONSTRAINT [DF_WorkFlowTab_descr]  DEFAULT (''),
+	[orderno] [int] NULL CONSTRAINT [DF_WorkFlowTab_orderno]  DEFAULT ((0)),
+	[Processcode] [varchar](50) NULL CONSTRAINT [DF_WorkFlowTab_Processcode]  DEFAULT (''),
+	[Nooftimes] [int] NULL CONSTRAINT [DF_WorkFlowTab_Nooftimes]  DEFAULT ((0)),
+	[USEINSELF] [varchar](1) NULL CONSTRAINT [DF__WorkFlowT__USEIN__53D9D2DB]  DEFAULT ((0)),
+	[ItsApprv] [bit] NULL CONSTRAINT [DF__WorkFlowT__ItsAp__54CDF714]  DEFAULT ((0)),
+	[CanBeJump] [bit] NULL DEFAULT ((0))
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+SET IDENTITY_INSERT [dbo].[WorkFlowTab] ON 
+
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(1 AS Numeric(18, 0)), N'Appr4PV', N'Approve Raising of PV', 4, N'IM01', 2, N'1', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(2 AS Numeric(18, 0)), N'RAISEPV', N'Raise PV', 5, N'IM01', 1, N'2', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(3 AS Numeric(18, 0)), N'REVIEWERPV', N'Review PV', 6, N'IM01', 1, N'2', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(4 AS Numeric(18, 0)), N'BUDGETAUTH', N'Authorise Budget Clearing', 7, N'IM01', 1, N'2', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(5 AS Numeric(18, 0)), N'BUDGETCLR', N'Budget Clear', 8, N'IM01', 1, N'2', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(6 AS Numeric(18, 0)), N'BUDGET', N'Approve Budget Clearing', 9, N'IM01', 1, N'2', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(7 AS Numeric(18, 0)), N'AUDIT', N'Approve Audit Clearing', 12, N'IM01', 1, N'2', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(8 AS Numeric(18, 0)), N'AUDITCLR', N'Audit Clear', 11, N'IM01', 1, N'2', 0, 1)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(9 AS Numeric(18, 0)), N'APPROVALPV', N'Approve Payment Schedule', 13, N'IM01', 1, N'2', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(10 AS Numeric(18, 0)), N'GenEpay', N'Payment via Gateway', 14, N'IM01', 1, N'2', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(11 AS Numeric(18, 0)), N'Approval', N'Approval', 2, N'IM01', 1, N'1', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(12 AS Numeric(18, 0)), N'Recom', N'Recommendation', 1, N'IM01', 4, N'1', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(13 AS Numeric(18, 0)), N'Authorizer', N'Authorization', 3, N'IM01', 1, N'1', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(14 AS Numeric(18, 0)), N'Appr4PV', N'Approve Raising of PV', 4, N'SEY222', 2, N'1', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(15 AS Numeric(18, 0)), N'RAISEPV', N'Raise PV', 5, N'SEY222', 1, N'2', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(16 AS Numeric(18, 0)), N'REVIEWERPV', N'Review PV', 6, N'SEY222', 1, N'2', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(17 AS Numeric(18, 0)), N'BUDGETAUTH', N'Authorise Budget Clearing', 7, N'SEY222', 1, N'2', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(18 AS Numeric(18, 0)), N'BUDGETCLR', N'Budget Clear', 8, N'SEY222', 1, N'2', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(19 AS Numeric(18, 0)), N'BUDGET', N'Approve Budget Clearing', 9, N'SEY222', 1, N'2', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(20 AS Numeric(18, 0)), N'AUDIT', N'Approve Audit Clearing', 12, N'SEY222', 1, N'2', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(21 AS Numeric(18, 0)), N'AUDITCLR', N'Audit Clear', 11, N'SEY222', 1, N'2', 0, 1)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(22 AS Numeric(18, 0)), N'APPROVALPV', N'Approve Payment Schedule', 13, N'SEY222', 1, N'2', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(23 AS Numeric(18, 0)), N'GenEpay', N'Payment via Gateway', 14, N'SEY222', 1, N'2', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(24 AS Numeric(18, 0)), N'Approval', N'Approval', 2, N'SEY222', 1, N'1', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(25 AS Numeric(18, 0)), N'Recom', N'Recommendation', 1, N'SEY222', 4, N'1', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(26 AS Numeric(18, 0)), N'Authorizer', N'Authorization', 3, N'SEY222', 1, N'1', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(27 AS Numeric(18, 0)), N'Appr4PV', N'Approve Raising of PV', 4, N'POT11', 2, N'1', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(28 AS Numeric(18, 0)), N'RAISEPV', N'Raise PV', 5, N'POT11', 1, N'2', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(29 AS Numeric(18, 0)), N'REVIEWERPV', N'Review PV', 6, N'POT11', 1, N'2', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(30 AS Numeric(18, 0)), N'BUDGETAUTH', N'Authorise Budget Clearing', 7, N'POT11', 1, N'2', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(31 AS Numeric(18, 0)), N'BUDGETCLR', N'Budget Clear', 8, N'POT11', 1, N'2', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(32 AS Numeric(18, 0)), N'BUDGET', N'Approve Budget Clearing', 9, N'POT11', 1, N'2', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(33 AS Numeric(18, 0)), N'AUDIT', N'Approve Audit Clearing', 12, N'POT11', 1, N'2', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(34 AS Numeric(18, 0)), N'AUDITCLR', N'Audit Clear', 11, N'POT11', 1, N'2', 0, 1)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(35 AS Numeric(18, 0)), N'APPROVALPV', N'Approve Payment Schedule', 13, N'POT11', 1, N'2', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(36 AS Numeric(18, 0)), N'GenEpay', N'Payment via Gateway', 14, N'POT11', 1, N'2', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(37 AS Numeric(18, 0)), N'Approval', N'Approval', 2, N'POT11', 1, N'1', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(38 AS Numeric(18, 0)), N'Recom', N'Recommendation', 1, N'POT11', 4, N'1', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(39 AS Numeric(18, 0)), N'Authorizer', N'Authorization', 3, N'POT11', 1, N'1', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(54 AS Numeric(18, 0)), N'REIMAREAAUTH', N'Recommend Area Office Reimbursement  Claim', 1, N'APRV', 2, N'1', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(55 AS Numeric(18, 0)), N'REIMAREAVERY', N'Verifier & Reviewer Area Office', 2, N'APRV', 1, N'4', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(56 AS Numeric(18, 0)), N'REIMAPPROVALOFFICE', N'Certify Area Office Reimbursement  Claim', 3, N'APRV', 1, N'1', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(57 AS Numeric(18, 0)), N'REIMHQAUTH', N'Recommend Verification of Claim HQ', 4, N'APRV', 2, N'1', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(58 AS Numeric(18, 0)), N'REIMHQVERY', N'Reimbursement Verifier & Reviewer (HQ)', 5, N'APRV', 1, N'4', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(59 AS Numeric(18, 0)), N'REIMHQAUTH2', N'Reimbursement Certify Verification of Claim (HQ)', 6, N'APRV', 1, N'1', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(60 AS Numeric(18, 0)), N'REIMRECOM', N'Reimbursement Recommend Verification of Claim (HQ)', 7, N'APRV', 1, N'1', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(61 AS Numeric(18, 0)), N'REiMAUDITAUTH', N'Reimbursement Audit Authorization (HQ)', 8, N'APRV', 1, N'1', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(62 AS Numeric(18, 0)), N'REiMAUDITCLR', N'Reimbursement Audit Clearing (HQ)', 9, N'APRV', 1, N'4', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(63 AS Numeric(18, 0)), N'REIMAUDITRECOM', N'Reimbursement Audit Approval (HQ)', 10, N'APRV', 1, N'1', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(65 AS Numeric(18, 0)), N'REIMAPPROVAL', N'Approval of Reimbursement  Claim (HQ)', 11, N'APRV', 1, N'1', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(66 AS Numeric(18, 0)), N'REIMAUTHORIZER', N'Authorise Reimburement Claim for Payment', 12, N'APRV', 1, N'1', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(67 AS Numeric(18, 0)), N'REIMAPPR4PV', N'Reimbursement Approval Raising of PV', 13, N'APRV', 1, N'4', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(68 AS Numeric(18, 0)), N'REIMRAISEPV', N'Reimbursement Raising of PV', 14, N'APRV', 1, N'4', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(69 AS Numeric(18, 0)), N'REIMREVIEWPV', N' Reimbursement Review of PV', 15, N'APRV', 1, N'4', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(70 AS Numeric(18, 0)), N'BUDGETAUTH', N'Authorise Budget Clearing', 16, N'APRV', 1, N'4', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(71 AS Numeric(18, 0)), N'BUDGETCLR', N'Budget Clear', 17, N'APRV', 1, N'4', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(72 AS Numeric(18, 0)), N'BUDGET', N'Approve Budget Clearing', 18, N'APRV', 1, N'4', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(73 AS Numeric(18, 0)), N'AUDIT', N'Approve Audit Clearing', 19, N'APRV', 1, N'4', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(74 AS Numeric(18, 0)), N'AUDITCLR', N'Audit Clear', 20, N'APRV', 1, N'4', 0, 1)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(75 AS Numeric(18, 0)), N'APPROVALPV', N'Approve Payment Schedule', 21, N'APRV', 1, N'4', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(76 AS Numeric(18, 0)), N'GenEpay', N'Payment via Gateway', 22, N'APRV', 1, N'4', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(77 AS Numeric(18, 0)), N'Appr4PV', N'Approve Raising of PV', 1, N'SALPV', 1, N'0', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(78 AS Numeric(18, 0)), N'RAISEPV', N'Raise PV', 2, N'SALPV', 1, N'0', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(79 AS Numeric(18, 0)), N'REVIEWERPV', N'Review PV', 3, N'SALPV', 1, N'0', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(80 AS Numeric(18, 0)), N'BUDGETAUTH', N'Authorise Budget Clearing', 4, N'SALPV', 1, N'0', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(81 AS Numeric(18, 0)), N'BUDGETCLR', N'Budget Clear', 5, N'SALPV', 1, N'0', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(82 AS Numeric(18, 0)), N'BUDGET', N'Approve Budget Clearing', 6, N'SALPV', 1, N'0', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(83 AS Numeric(18, 0)), N'AUDIT', N'Approve Audit Clearing', 7, N'SALPV', 1, N'0', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(84 AS Numeric(18, 0)), N'AUDITCLR', N'Audit Clear', 8, N'SALPV', 1, N'0', 0, 1)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(85 AS Numeric(18, 0)), N'APPROVALPV', N'Approve Payment Schedule', 9, N'SALPV', 1, N'0', 1, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(86 AS Numeric(18, 0)), N'GenEpay', N'Payment via Gateway', 10, N'SALPV', 1, N'0', 0, NULL)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(87 AS Numeric(18, 0)), N'AUDITAUTH', N'Authorize Audit Clearing', 10, N'IM01', 1, N'2', 0, 0)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(88 AS Numeric(18, 0)), N'AUDITAUTH', N'Authorize Audit Clearing', 10, N'SEY222', 1, N'2', 0, 0)
+GO
+INSERT [dbo].[WorkFlowTab] ([Keyid], [code], [descr], [orderno], [Processcode], [Nooftimes], [USEINSELF], [ItsApprv], [CanBeJump]) VALUES (CAST(89 AS Numeric(18, 0)), N'AUDITAUTH', N'Authorize Audit Clearing', 10, N'POT11', 1, N'2', 0, 0)
+GO
+SET IDENTITY_INSERT [dbo].[WorkFlowTab] OFF
+GO

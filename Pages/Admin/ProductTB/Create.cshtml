@@ -1,0 +1,83 @@
+﻿@page
+@model EcommerceReal.Pages.Admin.ProductTB.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Product.Name" class="control-label"></label>
+                <input asp-for="Product.Name" class="form-control" />
+                <span asp-validation-for="Product.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Description" class="control-label"></label>
+                <input asp-for="Product.Description" class="form-control" />
+                <span asp-validation-for="Product.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Price" class="control-label"></label>
+                <input asp-for="Product.Price" class="form-control" />
+                <span asp-validation-for="Product.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.OldPrice" class="control-label"></label>
+                <input asp-for="Product.OldPrice" class="form-control" />
+                <span asp-validation-for="Product.OldPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.SubCategoryId" class="control-label"></label>
+                <select required asp-for="Product.SubCategoryId" class="form-control" asp-items="ViewBag.SubCategoryList">
+                    <option selected="selected" value="-1">--select Category--</option>
+
+                </select>
+            </div>
+            <div id="imagelist" class="form-group">
+                <label>Images</label>
+                <input type="file"  multiple asp-for="ProductImages"/>
+
+                @*<input asp-for="ProductImages[0]">
+                <button id="btnmore" class="btn btn-warning">New Image</button>*@
+            </div>
+          
+            <input type="hidden" value="0" id="imgicrm" />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+<script>
+    $("#btnmore").on("click", function(event) {
+
+        event.preventDefault();
+        var curindex = $("#imgicrm").val();
+        var nextindesx = Number(curindex) + 1;
+        newimagecontrol(nextindesx);
+        $("#imgicrm").val(nextindesx);
+    })
+    function newimagecontrol(indesx) {
+
+        var htmld = `<input class="form-control" type="file" id="ProductImages_${indesx} name="ProductImages[${indesx}]">`
+        $("#imagelist").append(htmld);
+    }
+</script>
+}
+
+
